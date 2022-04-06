@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<style>
+.nucleus {
+	text-align: center;
+   border: 2px solid green;
+	border-radius: 50%;
+	background-color: #bbb;
+	position: absolute;
+	//left: 30px;
+	//top: 300px;
+	z-index: 3;
+}
+#PlayArea{
+	background-color: Cornsilk;
+}
+.oxygen{
+	border: 2px solid red;
+	background-color: #f55;
+	color: white;
+	width: 1.25em;
+	height: 1.25sm;
+	padding: 30px;
+}
+
+</style>
+<body>
+
+<h1>The onclick Event</h1>
+
+<p>The onclick event is used to trigger a function when an element is clicked on.</p>
+
+<p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+<div id="PlayArea"></div>
+<div id="Clicks"></div>
+<div id="Moves"></div>
+<button onclick="CreateAtom('PlayArea','oxygen', 'O')">Click me</button>
+
+<p id="demo"></p>
+
+<script src="clickyJava.js">
+
+</script>
+
+</body>
+</html>

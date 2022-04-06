@@ -1,0 +1,76 @@
+/*	function mousemoveEnd(e){
+		if (isResizing) {
+			ax = el.dataset.ax;
+			ay = el.dataset.ay;
+			bx = el.dataset.bx;
+			by = el.dataset.by;
+			currX = e.clientX; //Current pos
+			currY = e.clientY;
+			deltaX = currX - prevX;
+			deltaY = currY - prevY;
+
+			if (currentResizer.classList.contains("end2")) {
+				bx = +bx + deltaX;
+				by = +by + deltaY;
+				currLength = Math.sqrt((ax - bx)*(ax - bx) + (ay - by)*(ay - by));
+				el.style.transformOrigin = "10px 0px";
+				
+				calc = Math.atan((ax - bx)/(by - ay));
+				raw = calc;
+				calc = calc*180/Math.PI;
+				if (by < ay)
+					calc = calc + 180;
+				el.style.height = currLength + "px";
+				currentResizer.style.top = currLength - 50 + "px";		
+				el.style.transform = ("rotate(" + calc +"deg)");
+			}  else if (currentResizer.classList.contains("end1")) {
+				ax = +ax + deltaX;
+				ay = +ay + deltaY;
+				currLength = Math.sqrt((ax - bx)*(ax - bx) + (ay - by)*(ay - by));
+				el.style.transformOrigin = "10px 0px";
+				calc = Math.atan((ay - by)/(ax - bx));
+				calc = calc*180/Math.PI;
+				if (bx <= ax)
+					calc = calc - 180;
+				calc = calc - 90;
+				el.style.height = currLength + "px";
+				el.style.transform = ("rotate(" + calc +"deg)");
+				el.style.left = ax + "px";
+				el.style.top = ay + "px";
+				temp = document.getElementById(el.id + "end2");
+				temp.style.top = currLength - 50 + "px";	
+			}	
+		prevX = currX;
+		prevY = currY;
+		bondSetData(el,ax,ay,bx,by);
+		}
+				document.getElementById("data").innerHTML = "ax: " + span_obj.dataset.ax + " ay: " + span_obj.dataset.ay;
+	}
+	
+	function mouseupEnd() {
+	   window.removeEventListener("mousemove", mousemoveEnd);
+		window.removeEventListener("mouseup", mouseupEnd);
+		isDragging = false;
+		isResizing = false;
+		haveBond = false;
+	}		
+			
+function bondSetData(el, a, b, c, d){
+	el.dataset.ax = a;
+	el.dataset.ay = b;
+	el.dataset.bx = c;
+	el.dataset.by = d;
+}*/
+
+function mousedownEnd(e) {
+
+	currentResizer = e.target;
+	el=currentResizer.parentNode;
+	window.addEventListener("mousemove", mousemoveEnd);
+	window.addEventListener("mouseup", mouseupEnd);
+	prevX = e.clientX;   //initialization
+	prevY = e.clientY;
+	isDragging = false;
+	isResizing = true;
+	haveBond = true;
+}

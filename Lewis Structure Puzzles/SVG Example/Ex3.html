@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+<object type="image/svg+xml" data="exampl3a.svg" />   
+  <script type="text/ecmascript">
+  <![CDATA[
+    function changeRectColor(evt) {
+      var red = Math.round(Math.random() * 255);
+      evt.target.setAttributeNS(null,"fill","rgb("+ red +","+ red+","+red+")");
+    }
+  ]]>
+  </script>
+</body>
+</html>

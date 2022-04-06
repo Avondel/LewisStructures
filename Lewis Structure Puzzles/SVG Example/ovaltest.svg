@@ -1,0 +1,19 @@
+<svg id = "Foo" xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<radialGradient id="fire" 
+cx="250" cy="80" r="150" fx="150" fy="80" 
+gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FF0088"/>
+<stop offset="0.4" stop-color="#FFdd88"/>
+<stop offset="1" stop-color="#88aa00"/>
+</radialGradient>
+</defs>
+<path d="M 50 200 L 350 200 L 250 60 L 180 10z"
+stroke="black" fill="url(#fire)" stroke-width="5" />
+<ellipse id="E" cx="150" cy="120" rx="100" ry="40" 
+fill="red" stroke="black" opacity=".75">
+<animate attributeName="cx" dur="2s" 
+values="150;250;150" repeatCount="indefinite"/>
+</ellipse>
+</svg>

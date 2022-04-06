@@ -1,0 +1,24 @@
+<html>
+<head>
+
+<script type="text/javascript" language ="javascript" >
+   function createElementSpan(obj){
+		alert("Kitty!");
+      var div_obj = document.getElementById(obj);
+      // Add span
+      var span_obj = document.createElement("span");
+
+      // Set attribute for span element, such as id
+      span_obj.setAttribute("id", "span_New");
+
+      // Set text for span element
+      span_obj.innerHTML = "Example three of javascript create element: Add a New Span element";
+      div_obj.appendChild(span_obj);
+   }
+  </script>
+  </head>
+<body>
+<div id="parent_div"></div>
+<button onclick = createElementSpan("parent_div")>Click Me</button>
+</body>
+</html>

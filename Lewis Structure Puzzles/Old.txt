@@ -1,0 +1,44 @@
+	function mouseupBond(){
+		window.removeEventListener("mousemove", mousemoveBond);
+		window.removeEventListener("mouseup", mouseupBond);
+		isResizing = false;
+		isDragging = true;
+	}
+	
+	function mousemoveBond(e) {
+
+	if(!isResizing && isDragging){
+		ax = el.dataset.ax;
+		ay = el.dataset.ay;
+		bx = el.dataset.bx;
+		by = el.dataset.by;
+		let deltaX = prevX - e.clientX;
+		let deltaY = prevY - e.clientY;
+		ax = ax - deltaX;
+		ay = ay - deltaY;
+		bx = bx - deltaX;
+		by = by - deltaY;
+		el.style.transformOrigin = "10px 0"; 
+		//el.style.left = ax - deltaX + "px"; //Use this for tighter behaviour
+		//el.style.top = ay - deltaY + "px";
+		el.style.left = ax + "px";
+		el.style.top = ay + "px";
+		prevX = e.clientX;
+		prevY = e.clientY;
+		bondSetData(el, ax, ay, bx, by); //set data
+		alert("Move Bond");
+	}
+}
+
+function mousedown(e) {
+
+	if(!isResizing){
+	el = e.target;
+   window.addEventListener("mousemove", mousemoveBond);
+   window.addEventListener("mouseup", mouseupBond);
+   prevX = e.clientX;
+   prevY = e.clientY;
+	isDragging = true;
+	isResizing = false;
+	}
+}

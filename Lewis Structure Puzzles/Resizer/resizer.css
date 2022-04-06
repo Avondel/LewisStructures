@@ -1,0 +1,84 @@
+.item{
+	height: 50px;
+	width:7px;
+	top: 250px;
+	left: 250px;
+	background-color: Orange;
+	position: absolute;
+	
+}
+#console{
+	background-color: AliceBlue;
+}
+#notes{
+	font-weight: bold;
+}
+#data{
+	
+}
+
+#PlayArea{
+	background-color: Cornsilk;
+	//height: 300px;
+	//width: 750px;
+	//background-color: AquaMarine;
+	//position: absolute;
+	//top: 50px;
+	//left: 10px;
+}
+
+.resizer{
+	position: absolute;
+	height: 15px;
+	width: 15px;'
+	background-color: Brown;
+	//transform: rotate(45deg);
+	z-index: 2;
+}
+
+.resizer.end1{
+	top: 0px;
+	right: 0px;
+	background-color: Red;
+	border-radius: 50%;
+	cursor: ne-resize;
+}
+
+.resizer.end2{
+	bottom: 0px;
+	right: 0px;
+	border-radius: 50%;
+	background-color: Green;
+	cursor: se-resize;
+}
+
+
+.numberCircle {
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+
+    background: #fff;
+    border: 5px solid #666;
+    color: #666;
+    text-align: center;
+
+    font: 32px Arial, sans-serif;
+}
+.tableAtom{
+	height: 60px;
+	vertical-align: top;
+}
+
+.nucleus {
+      text-align: center;
+      border: 2px solid green;
+		border-radius: 50%;
+		background-color: #bbb;
+      padding: 20px;
+		width: 1em;
+		position: absolute;
+		z-index: 2;
+ 
+}

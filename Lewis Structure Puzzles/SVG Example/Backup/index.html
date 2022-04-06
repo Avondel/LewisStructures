@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Modification of SVG from HTML</title>
+</head>
+<body>
+<b>
+C.	Using Javascript functions in HTML to modify attributes of SVG objects</b><br>
+<br>
+This shows one a few simple ways to leverage the sophisticated GUI of the HTML DOM to use 
+information from the user to modify SVG content. We may either
+traverse the SVG DOM by finding children of parent nodes and their properties or
+by using the perhaps, more simple, "getElementById" construction to find labeled SVG
+objects. The following examples illustrate aspects of each approach.<br>
+&nbsp;<p>Example 0: (Working in IE, Opera, and (except for the SMIL) FF </p>
+<blockquote>
+	<table border="1" width="95%" id="table1">
+		<tr>
+			<td colspan="2" align="center"><iframe name="I1" src="ovalchange.html" height="300" width="100%">
+			Your browser does not support inline frames or is currently configured not to display inline frames.
+			</iframe></td>
+		</tr>
+		<tr>
+			<td align="center"><font color="#FF0000">HTML</font></td>
+			<td align="center"><font color="#FF0000">SVG</font></td>
+		</tr>
+		<tr>
+			<td><xmp>
+<html><head><script>
+var E;
+function prepare(){
+   var S=document.getElementById("sv")
+   var SD=S.getSVGDocument();
+   E=SD.getElementById('E');
+}
+function change(v){
+   E.setAttribute("fill", v);
+}
+</script></head>
+<body onload="prepare()"><div align="center">
+<embed id="sv" src="ovaltest.svg" width=400 height=200>
+</embed>
+<form name="f">
+<select onchange="change(this.value)">
+<option value="orange">orange</option>
+<!--etc.-->
+<option value="red">red</option>
+</select>
+</form></div></body></html>
+			</xmp></td>
+			<td><xmp>
+<svg xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink">
+<defs>
+<radialGradient id="fire" 
+cx="250" cy="80" r="150" fx="150" fy="80" 
+gradientUnits="userSpaceOnUse">
+<stop offset="0" stop-color="#FF0088"/>
+<stop offset="0.4" stop-color="#FFdd88"/>
+<stop offset="1" stop-color="#88aa00"/>
+</radialGradient>
+</defs>
+<path d="M 50 200 L 350 200 L 250 60 L 180 10z"
+stroke="black" fill="url(#fire)" stroke-width="5" />
+<ellipse id="E" cx="150" cy="120" rx="100" ry="40" 
+fill="red" stroke="black" opacity=".75">
+<animate attributeName="cx" dur="2s" 
+values="150;250;150" repeatCount="indefinite"/>
+</ellipse>
+</svg>
+			</xmp></td>
+		</tr>
+	</table>
+</blockquote>
+<p>
+<br>
+<u>
+Example 1:</u> (IE Only) In the following, a series of radio buttons allows the user to
+investigate values of two parameters of the feTurbulence property which allows
+images to be distorted in interesting ways. As the user chooses new values of
+“NumOctaves” and “BaseFrequency” the underlying image (in this case a
+simple polygon “path” filled with a radial gradient) is automatically
+adjusted through appropriate redefinitions of these attribute values. Results of
+one such pair of values is illustrated following the code. </p>
+</p>
+
+<blockquote>
+
+  <table border="1">
+    <tr>
+      <td colspan="2">
+      <iframe src="turbulence.html" width="700" height="340"></iframe>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><font color="#FF0000">HTML page</font></td>
+      <td align="right"><font color="#FF0000">Embedded SVG document</font></td>
+    </tr>
+    <tr>
+      <td width="281">
+&lt;html&gt;&lt;head&gt;&lt;script&gt;<br>
+var svgdoc, TurbProp<br>
+function prepare(){<br>
+&nbsp;&nbsp; svgdoc = document.sv.getSVGDocument();<br>
+&nbsp;&nbsp; TurbProp=svgdoc.getElementById('Turb');<br>
+}<br>
+function baseF(v){<br>
+&nbsp;&nbsp; TurbProp.setAttribute (&quot;baseFrequency&quot;, v);<br>
+}<br>
+function octaves(v){<br>
+&nbsp;&nbsp; TurbProp.setAttribute (&quot;numOctaves&quot;, v);<br>
+}<br>
+&lt;/script&gt;&lt;/head&gt;&lt;body onload=&quot;prepare()&quot;&gt;<br>
+&lt;embed name=&quot;sv&quot; src=&quot;sixa.svg&quot; width=500
+height=350&gt;&lt;/embed&gt;<br>
+&lt;form name=&quot;f&quot;&gt;<br>
+Base Frequency: .05<br>
+&lt;input type=&quot;radio&quot; name=&quot;b&quot;&nbsp;checked onclick=&quot;baseF(.05)&quot;&gt;<br>
+.10&lt;input type=&quot;radio&quot; name=&quot;b&quot; onclick=&quot;baseF(.10)&quot;&gt;<br>
+.20&lt;input type=&quot;radio&quot; name=&quot;b&quot; onclick=&quot;baseF(.20)&quot;&gt;<br>
+| | | | Octaves:<br>
+1&lt;input type=&quot;radio&quot; name=&quot;o&quot; onclick=&quot;octaves(1)&quot;&gt;<br>
+2&lt;input type=&quot;radio&quot; name=&quot;o&quot;&nbsp;<br>
+ checked onclick=&quot;octaves(2)&quot;&gt;<br>
+3&lt;input type=&quot;radio&quot; name=&quot;o&quot; onclick=&quot;octaves(3)&quot;&gt;<br>
+&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;</td>
+      <td width="352">
+&lt;svg xml:space=&quot;preserve&quot;&nbsp;<br>
+ width=&quot;7in&quot;
+height=&quot;5in&quot; viewBox=&quot;0 0 450 200&quot;&gt;<br>
+&lt;defs&gt;<br>
+&lt;filter id=&quot;Distort&quot;&gt;<br>
+&lt;feTurbulence id=&quot;Turb&quot;&nbsp;<br>
+ baseFrequency=&quot;.05&quot; numOctaves=&quot;2&quot;
+result=&quot;turb&quot;/&gt;<br>
+&lt;feDisplacementMap in=&quot;SourceGraphic&quot;&nbsp;<br>
+ in2=&quot;turb&quot;
+scale=&quot;100&quot; xChannelSelector=&quot;R&quot;&nbsp;<br>
+ yChannelSelector=&quot;B&quot;/&gt;<br>
+&lt;/filter&gt;<br>
+&lt;radialGradient id=&quot;gradient1&quot;&nbsp;<br>
+ cx=&quot;250&quot; cy=&quot;80&quot;
+r=&quot;150&quot; fx=&quot;150&quot; fy=&quot;80&quot; gradientUnits=&quot;userSpaceOnUse&quot;&gt;<br>
+&lt;stop offset=&quot;0&quot; style=&quot;stop-color:#FF0088&quot;/&gt;<br>
+&lt;stop offset=&quot;0.4&quot; style=&quot;stop-color:#FFdd88&quot;/&gt;<br>
+&lt;stop offset=&quot;0.8&quot; style=&quot;stop-color:#ddff44&quot;/&gt;<br>
+&lt;stop offset=&quot;1&quot; style=&quot;stop-color:#88aa00&quot;/&gt;<br>
+&lt;/radialGradient&gt;<br>
+&lt;/defs&gt;<br>
+<br>
+&lt;g id=&quot;image&quot; style=&quot;filter:url(#Distort)&quot;&gt;<br>
+&lt;path id=&quot;P&quot;&nbsp;<br>
+ d=&quot;M 50 200 L 350 200 L 280 10 L 250 60 L 180
+10z&quot; style=&quot;fill:url(#gradient1)&quot;/&gt;<br>
+&lt;/g&gt;<br>
+&lt;/svg&gt;</td>
+    </tr>
+  </table>
+
+</blockquote>
+
+<p>
+<br>
+<u>
+Example2:</u> IE Only
+</p>
+
+<blockquote>
+
+  <table border="1">
+    <tr>
+      <td colspan="2">
+      <iframe src="stencil.html" width="700" height="340"></iframe>
+      </td>
+    </tr>
+    <tr>
+      <td align="right"><font color="#FF0000">HTML page</font></td>
+      <td align="right"><font color="#FF0000">Embedded SVG document</font></td>
+    </tr>
+    <tr>
+      <td width="281">
+	  <xmp><html><head>
+<script>
+function readtext(s){
+var svgdoc = document.getElementById("sv").getSVGDocument();
+var textobj = svgdoc.getElementById("T");
+textobj.getFirstChild().nodeValue=s
+}
+</script></head>
+<body bgcolor=#aa88aa>
+<embed id="sv" src="imageclip.svg" width=400 height=270>
+</embed>
+<form name="f">
+<input name="txt" onclick="this.value=''" 
+onkeyup="readtext(this.value)" value="Hello">
+<--- Type here
+</form>
+</body></html>
+	  </xmp>
+	  </td>
+      <td width="352">
+<xmp>
+<svg>
+<filter id="MyFilter" filterUnits="userSpaceOnUse">
+<feImage transform="translate(-10 -50)" 
+xlink:href="boul.gif" result="BackgroundImage"/>
+<feComposite operator="in" in2="SourceGraphic" 
+result="CompImage"/>
+</filter>
+<g id="image" style="filter:url(#MyFilter)">
+<path id="P" d="M 50 200 L 200 150 
+L 350 200 L 280 10 L 250 60 L 180 10z"/>
+<text id="T" x="140" y="225" 
+style="font-family:impact;font-size:70">
+Hello</text>
+</g>
+</svg>
+</xmp>
+</td>
+    </tr>
+  </table>
+
+</blockquote>
+
+<p><br>
+In this example, each keystroke the user makes in the input field results in a
+new “stencil” being cut through which the underlying image may be
+viewed.&nbsp;<br>
+<br>
+This is accomplished by first finding the object named “T” inside the SVG,
+then locating its first child and then replacing the nodeValue of that with the
+user-defined string.<br>
+<br>
+<br>
+
+</body>
+</html>

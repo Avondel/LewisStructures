@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Drag and Resize</title>
+	<link rel="stylesheet" type = "text/css" href = "LewisStyle.css">
+	<link rel="stylesheet" type = "text/css" href = "AtomStyle.css">
+
+</head>
+<body  id="PlayArea" onload="myFunction()" onclick = "myClick(event)" >
+	<h1>Welcome to my Lewis Structure Puzzle Page!</h1>
+	<div id="console">
+		<div id="notes">Notes:</div>
+		<div id="mouse"><br/></div>
+		<div id="data"></div>
+	</div>
+	<div id="levels">Levels</div>
+		<!--button id="create" onclick = "CreateBond('PlayArea', 200,300,200,500)">Create Bond</button/!-->
+		<button value="Hydrogen" id = "Hydrogen" onclick="CreateAtom('Molecule','hydrogen', 'H')">Hydrogen</button>
+		<button value="Carbon" id="Carbon" onclick="CreateAtom('Molecule','carbon','C')">Carbon</button>
+		<button value="Oxygen" id="Oxygen" onclick="CreateAtom('Molecule', 'oxygen', 'O')">Oxygen</button>
+		<button value="ElectronPair" id="ElectronPair" onclick="createPair()" disabled>Electrons</button>
+		<button value="Delete" id="Delete" onclick="deleteAtom(event)" disabled>Delete Atom</button>
+		<button value="Change" id="Change" onclick="differentAtom(event)" disabled>Change Atom</button><br>
+		<button value="Clear" onclick="clearMolecule()">Clear/Restart</button>
+		<button value="List Bonds" onclick="listBonds()">List Bonds</button>
+		<!--button value="List" onclick="ListChildren('bit3')">List Children</button/!-->
+	<div id="Molecule"></div>	</div>
+	
+</body>
+<script src = "LewisJava.js"></script>
+<script src = "ArrayProcessing.js"></script>
+</html>

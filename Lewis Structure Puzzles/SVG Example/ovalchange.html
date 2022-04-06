@@ -1,0 +1,25 @@
+<html><head><script>
+var E;
+function prepare(){
+   var S=document.getElementById("sv")
+   var SD=S.getSVGDocument();
+   E=SD.getElementById('E');
+}
+function change(v){
+   E.setAttribute("fill", v);
+}
+</script></head>
+<body onload="prepare()"><div align="center">
+<embed id="sv" src="ovaltest.svg" width=400 height=200>
+</embed>
+<form name="f">
+<select onchange="change(this.value)">
+<option value="orange">orange</option>
+<option value="yellow">yellow</option>
+<option value="green">green</option>
+<option value="cyan">cyan</option>
+<option value="blue">blue</option>
+<option value="purple">purple</option>
+<option value="red">red</option>
+</select>
+</form></div></body></html>

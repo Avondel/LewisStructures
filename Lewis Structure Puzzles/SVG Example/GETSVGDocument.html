@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <title>GetSVGDocument Example</title>
+<head>
+
+<script type="text/javascript">
+  function getDocument() 
+  {
+    var svgDoc = document.getElementById("SVGDoc").contentDocument();
+    alert( svgDoc );
+  }
+</script>
+
+</head>
+<body>
+
+  <button onclick="getDocument();">Show SVG Document</button>
+  <br />
+  <object id="SVGDoc" type="image/svg+xml" data="example.svg"></object>
+
+</body>
+</html>

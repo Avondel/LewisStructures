@@ -1,0 +1,67 @@
+#console{
+	background-color: AliceBlue;
+}
+#notes{
+	font-weight: bold;
+}
+#data{
+	height: 80px;
+	
+}
+
+#PlayArea{
+	background-color: Cornsilk;
+}
+
+#levels{
+	background-color: Red;
+	position: absolute;
+	top: 50px;
+	left: 1000px;
+	height: 50px;
+	width: 50px;
+}
+
+.Molecule{
+	background-color: AquaMarine;
+	position: absolute;
+	/*top: 50px;
+	left: 100px;
+	height: 50px;
+	width: 50px;*/
+	}
+
+.bond{
+	height: 50px;
+	width:20px;
+	top: 250px;
+	background-color: Orange;
+	position: absolute;
+	z-index: 2;
+}
+
+.resizer{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background-color: Brown;
+	z-index: 2;
+}
+
+.resizer.end1{
+	top: 0px;
+	right: -3px;
+	//background-color: Red;
+	border-radius: 50%;
+	cursor: ne-resize;
+	text-align: center;
+	color: white;
+}
+
+.resizer.end2{
+	bottom: 0px;
+	right: -3px;
+	border-radius: 50%;
+	background-color: Green;
+	cursor: se-resize;
+}

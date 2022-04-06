@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Drag and Resize</title>
+	<link rel="stylesheet" href = "resizer.css">
+
+</head>
+<body>
+
+<h2>JavaScript Objects</h2>
+	<div id="console">
+		<div id="notes">Notes:</div>
+		<div id="mouse"><br/></div>
+		<div id="data" onmouseover = "showId(event)"></div>
+	</div>
+	<div id="PlayArea">Play Area</div>
+
+<p id="demo"></p>
+<button id="CreatePerson" onclick="myFunction()">Make Person</button>
+
+<script>
+count=0;
+function createPerson(firstName, lastName) {
+    return {
+        firstName: firstName,
+        lastName: lastName,
+        getFullName() {
+            return firstName + ' ' + lastName;
+        }
+    }
+}
+function showId(e){
+	//alert(e.target.id);
+}
+
+function myFunction(){
+//let john = createPerson('John', 'Doge'),
+  // jane = createPerson('Jane', 'Doe');
+	 //herb = createPerson('Herberen', 'Cohen');
+	var span_end2 = document.createElement("span");
+	//var id = "line" + count;
+	//	span_end2.setAttribute("id",id+"end2");
+	//	span_end2.setAttribute("class","item");
+	span_end2.innerHTML = "Hello";
+		span_end2.style.top = "200px";
+		span_end2.style.left = "300px";
+		span_end2.style.height = "50px";
+		span_end2.style.width = "50px";
+		span_end2.style.backgroundColor = "Red";
+		//span_end2.style.top= length-15 + "px";
+//document.getElementById("data").innerHTML+=john.getFullName() + " " + jane.firstName + " "+ herb.getFullName();
+tempdiv = document.getElementById("PlayArea");
+document.getElementById("PlayArea").appendChild(span_end2);
+
+}
+</script>
+
+</body>
+</html>

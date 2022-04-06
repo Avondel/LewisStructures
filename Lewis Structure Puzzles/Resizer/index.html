@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Drag and Resize</title>
+	<link rel="stylesheet" href = "resizer.css">
+
+</head>
+<body  onmousemove="myFunction(event)" >
+	<h1>Welcome to my Lewis Structure Puzzle Page!</h1>
+	<div id="console">
+		<div id="notes">Notes:</div>
+		<div id="mouse"><br/></div>
+		<div id="data"></div>
+	</div>
+	<div id="PlayArea"></div>
+	<div id="Molecule"></div>
+		<button id="create" onclick = "CreateBond('PlayArea', 300,200,300,400)">Create Bond</button>
+		<button value="Atom" onclick="CreateAtom('PlayArea')">Atom</button>
+		<!--div class="item" id="bond">
+		<div class="resizer end1" id="end1"></div>
+		<div class="resizer end2" id="end2"></div>
+	</div/!-->
+	
+</body>
+<script src = "resizer.js"></script>
+</html>
