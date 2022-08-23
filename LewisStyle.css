@@ -1,0 +1,139 @@
+#console{
+	background-color: AliceBlue;
+}
+#notes{
+	font-weight: bold;
+}
+#data{
+	height: 80px;
+}
+
+#PlayArea{
+	background-color: Cornsilk;
+}
+
+#levels_container{
+	background: rgba(204,225,204, .6);
+	position: absolute;
+	top: 0px;
+	left: 1210px;
+	height: 395px;
+	width: 215px;
+	border: solid 1px #889988;
+	font-size: 2em;
+	font-style: italic;
+}
+#Help{
+	top: 20px;
+	left: 20px;
+	position: absolute;
+}
+
+.footer {
+	position: fixed;
+	padding: 10px 10px 0px 10px;
+	bottom: 0;
+	width: 100%;
+	left: 0px;
+	/* Height of the footer*/ 
+	height: 80px;
+	background: #eeffdd;
+}
+
+.buttons {
+	text-align: center;
+}
+
+.footer2 {
+	position: fixed;
+	padding: 10px 10px 0px 10px;
+	bottom: 0;
+	width: 100%;
+	left: 0px;
+	/* Height of the footer*/ 
+	height: 80px;
+	text-align: center;
+	background: #eeffdd;
+}
+
+.level{
+	position: absolute;
+	top: 40px;
+	left: 10px;
+	width: 50px;
+	text-align: center;
+	padding-top: 11px;
+	padding-bottom: 11px;
+	font-style: normal
+}
+
+.locked{
+	background: rgba(240,120, 120, 1);
+	border: solid 1px #ddeeff;
+}
+
+.unlocked{
+	background: rgba(120,220, 120, 1);
+	border: solid 1px #eeddff;
+}
+
+.Molecule{
+	/*background-color: AquaMarine;*/
+	position: absolute;
+	/*top: 50px;
+	left: 100px;
+	height: 50px;
+	width: 50px;*/
+	}
+
+/*Single bond*/
+.s{
+	width: 14px;
+	background-color: #b2A2CD;
+	position: absolute;
+	z-index: 2;
+}
+
+/*Double bond*/
+.d{
+	width:14px;
+	background-color: Orange;
+	position: absolute;
+	z-index: 2;
+	background-image: linear-gradient(90deg, #B2A2CD 33%, #FFFFFF 33%, #FFFFFF 66%, #B2A2CD 66%, #B2A2CD 100%);
+}
+
+/*Triple bond*/
+.t{
+		width:14px;
+	background-color: Orange;
+	position: absolute;
+	z-index: 2;
+	background-image: linear-gradient(90deg, #B2A2CD 20%, #FFFFFF 20%, #FFFFFF 40%, #B2A2CD 40%,#B2A2CD 60%, #FFFFFF 60%, #FFFFFF 80%, #B2A2CD 80%,  #B2A2CD 100%);
+}
+
+.resizer{
+	position: absolute;
+	height: 100px;
+	width: 100px;
+	background-color: Brown;
+	z-index: 2;
+}
+
+.resizer.end1{
+	top: 0px;
+	right: -3px;
+	//background-color: Red;
+	border-radius: 50%;
+	cursor: ne-resize;
+	text-align: center;
+	color: white;
+}
+
+.resizer.end2{
+	bottom: 0px;
+	right: -3px;
+	border-radius: 50%;
+	background-color: Green;
+	cursor: se-resize;
+}

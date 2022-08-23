@@ -1,0 +1,265 @@
+.electron1{
+	width: 8px;
+	height: 8px;
+	top: 8px;
+	left: 10px;
+	border-radius: 50%;
+	background-color: #000;
+	position: absolute;
+}
+
+.electron2{
+	width: 8px;
+	height: 8px;
+	top: 8px;
+	left: 30px;
+	border-radius: 50%;
+	background-color: #000;
+	position: absolute;
+}
+
+.pair{
+	 border: 2px solid #728fce;
+	 //border-top: 3px solid GhostWhite;
+	 position: absolute;
+	 border-radius: 45%;
+	 width: 50px;
+	 height: 24px;
+	 background-color: Lavender;
+	 opacity: 75%;
+	 ///left: 100px;
+}
+
+.none {
+	border: 2px solid grey;
+	background-color: #eee;
+	padding: 20px;
+	width: 1em;
+}
+
+.nucleus {
+	text-align: center;
+    border: 2px solid green;
+	border-radius: 50%;
+	background-color: #bbb;
+	position: absolute;
+	z-index: 3;
+}
+
+.Hydrogen {
+	border: 2px solid Cyan;
+	background-color: WhiteSmoke;
+	opacity: .60;
+	padding: .5em;
+	width: 1em;
+}
+
+.Helium{
+	border: 2px solid #999;
+	background-color: #fff;
+	opacity: .60;
+	padding: 1.2em;
+	width: 1em;
+}
+
+.Lithium{
+	border: 2px solid DimGrey;
+	background-color: DarkGrey;
+	padding: 2.9em;
+	width: 1em;
+}
+
+.Beryllium{
+	border: 2px solid #111;
+	background-color: DimGrey;
+	color: white;
+	padding: 2.05em;
+	width: 1em;
+}
+
+.Boron{
+	border: 2px solid #3B0503;
+	background-color: SaddleBrown;
+	color: white;
+	padding: 1.7em;
+	width: 1em;
+}
+
+.Carbon {
+	border: 2px solid green;
+	background-color: #333;
+	color: white;
+	padding: 1.4em;
+	width: 1em;
+}
+
+.Nitrogen{
+	border: 2px solid blue;
+	background-color: LightCyan;
+	color: blue;
+	opacity: .6;
+	padding: 1.3em;
+	width: 1em;
+}
+
+.Oxygen{
+	border: 2px solid red;
+	background-color: #f55;
+	color: white;
+	opacity: .8;
+	padding: 1.2em;
+	width: 1em;
+}
+
+.Fluorine{
+	border: 2px solid SaddleBrown;
+	background-color: LightGoldenRodYellow;
+	color: black;
+	opacity: .8;
+	padding: 1em;
+	width: 1em;
+}
+
+.Sodium{
+	border: 2px solid DimGrey;
+	background-color: Grey;
+	color: black;
+	padding: 3.2em;
+	width: 1em;
+}
+
+.Magnesium{
+	border: 2px solid DimGrey;
+	background-color: LightGrey;
+	color: black;
+	padding: 3.0em;
+	width: 1em;
+}
+
+.Aluminum{
+	border: 2px solid DimGrey;
+	background-color: LightGrey;
+	color: black;
+	padding: 2.5em;
+	width: 1em;
+}
+
+.Silicon{
+	border: 2px solid Black;
+	background-color: DarkGrey;
+	color: White;
+	padding: 2.2em;
+	width: 1em;
+}
+
+.Phosphorus{
+	border: 2px solid Black;
+	background-color: Brown;
+	color: white;
+	padding: 2em;
+	width: 1em;
+}
+
+.Sulphur{
+	border: 2px solid Brown;
+	background-color: Gold;
+	color: black;
+	padding: 2.0em;
+	width: 1em;
+}
+
+.Chlorine{
+	border: 2px solid Green;
+	background-color: GreenYellow;
+	opacity: .6;
+	color: Green;
+	padding: 2.0em;
+	width: 1em;
+}
+
+.Potassium{
+	border: 2px solid DimGrey;
+	background-color: Silver;
+	color: black;
+	padding: 3.5em;
+	width: 1em;
+}
+
+.Calcium{
+	border: 2px solid DimGrey;
+	background-color: Grey;
+	color: black;
+	padding: 3.4em;
+	width: 1em;
+}
+
+.Bromine{
+	border: 2px solid Black;
+	background-color: DarkRed;
+	color: white;
+	padding: 2.3em;
+	width: 1em;
+}
+
+.Copper{
+	border: 2px solid Brown;
+	background-color: DarkGoldenRod;
+	color: white;
+	padding: 2.7em;
+	width: 1em;
+}
+
+.Silver{
+	border: 2px solid DimGrey;
+	background-color: Silver;
+	color: black;
+	padding: 3.2em;
+	width: 1em;
+}
+
+.Iodine{
+	border: 2px solid Indigo;
+	background-color: DarkViolet;
+	color: white;
+	padding: 2.8em;
+	width: 1em;
+}
+
+.Gold{
+	border: 2px solid Brown;
+	background-color: Gold;
+	color: black;
+	padding: 2.7em;
+	width: 1em;
+}
+
+.Mercury{
+	border: 2px solid Gray;
+	background-color: Gainsboro;
+	color: black;
+	padding: 3.0em;
+	width: 1em;
+}
+
+.Lead{
+	border: 2px solid Black;
+	background-color: DarkGrey;
+	color: White;
+	padding: 3.2em;
+	width: 1em;
+}
+
+.Bismuth{
+	border: 2px solid Fushia;
+	background-color: LightPink;
+	color: black;
+	padding: 3.2em;
+	width: 1em;
+}
+.active {
+	border: 2px solid gold;
+}
+
+.change {
+	border: 2px solid red;
+}
