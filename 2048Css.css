@@ -1,0 +1,161 @@
+:root {
+	--animation-duration: 1s;
+	--startY: 1000px;
+	--startX: 1000px;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  animation: backgroundChange;
+  animation-duration: 60s;
+  animation-iteration-count: infinite;
+}
+
+.inst{
+	text-align: center;
+}
+
+
+
+table, tr, td{
+	border: 16px solid;
+	border-collapse: collapse;
+	animation: borderChange;
+	animation-duration: 60s;
+	animation-iteration-count: infinite;
+}
+
+tr{
+	height: 116px;
+}
+
+td {
+	height: 100px;
+	width: 100px;
+	position: relative;
+}
+
+table{
+	//margin-left: auto;
+	//margin-right: auto;
+	//margin-top: -200px;
+}
+
+img{
+	width: 100px;
+	height: 100px;
+	top: 0px;
+	left: 0px;
+	position: absolute;
+
+}
+.cont{
+	top: 0px;
+	left: 0px;
+	position: absolute;
+}
+
+.currScore{
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	background: hotPink;
+	position: relative;
+	height: 100px;
+	width: 200px;
+}
+
+#game{
+	position: absolute;	
+	left: 450px;
+	top: 150px;
+	
+}
+/*Animations*/
+
+
+@keyframes borderChange{
+	0%{color: DarkSeaGreen;}
+	10%{color: PowderBlue;}
+	20%{color: Thistle;}
+	30%{color: RosyBrown;}
+	40%{color: PeachPuff;}
+	50%{color: Moccasin;}
+	60%{color: LightBlue;}
+	70%{color: Lavender;}
+	80%{color: Pink;}
+	90%{color: BurlyWood;}
+	100%{color: DarkSeaGreen;}
+}
+	
+@keyframes backgroundChange{
+	0% {background-color: Honeydew; color: green;}
+	10% {background-color: LightCyan; color: DodgerBlue;}
+	20% {background-color: Lavender; color: RebeccaPurple;}
+	30% {background-color: LavenderBlush; color: Crimson;}
+	40% {background-color: PapayaWhip; color: OrangeRed;}
+	50% {background-color: Cornsilk; color: Peru;}
+	60% {background-color: AliceBlue; color: DarkTurquoise;}
+	70% {background-color: GhostWhite; color: MediumSlateBlue;}
+	80% {background-color: Snow; color: DeepPink;}
+	90% {background-color: Ivory; color: Brown;}
+	100% {background-color: Honeydew; color: green;}
+}
+
+
+@keyframes borderChange2{
+	0%{color: DarkSeaGreen;}
+
+	90%{color: BurlyWood;}
+	100%{color: DarkSeaGreen;}
+}
+
+@keyframes backgroundChange2{
+	0% {background-color: Ivory; color: Brown;}
+	100% {background-color: Ivory; color: Brown;}
+}
+
+/* Animations */
+@keyframes fillColor {
+  to {
+    background-color: #7afcff;
+  }
+}
+
+@keyframes unfillColor {
+  to {
+    background-color: #feff9c;
+  }
+}
+
+@keyframes moveRight{
+	from{left: 0px;}
+	to {left: 200px;}
+}
+
+@keyframes moveLeft{
+	from{left: 0px;}
+	to {left: 50px;}
+}
+
+@keyframes moveLeft2{
+	to{left: 0px; top: 0px;}
+}
+
+@keyframes grow{
+	to{transform: scale(1);}
+}
+
+@keyframes moveDown{
+	from{top: 0px}
+	to {top: 200px;}
+}
+
+@keyframes moveUp{
+	from{top: 0px;}
+	to{top: -200px;}
+}
+
+
