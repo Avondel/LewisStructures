@@ -1,58 +1,61 @@
-	<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>2048 Ways to Immunity!</title>
-	<link rel="stylesheet" href="2048Css.css" >
-</head>
-<body onload = "init()">
-	<h1><center>2048 Ways to Immunity</center></h1>
-	<!--span id="Players">
-		<p class="type">Innate</p>
-		Skin <br>
-		Mucus<br>
-		Mast Cells<br>
-		Neutrophile<br>
-		Macrophage<br>
-		Natural Killer<br>
-		<p class="type">Specific, Cell Mediated</p>
-		B-Cell<br>
-		Antibody<br>
-		T-Cell<br>
-		Memory Cell<br>
-		IMMUNITTY
-	</span/!-->
+	<title>Online Molecule Kit</title>
+	<link rel="stylesheet" type = "text/css" href = "LewisStyle.css">
+	<link rel="stylesheet" type = "text/css" href = "AtomStyle.css">
 
-	<span id="game">
-		<span class="currScore">Score:</span><span class="highScore">High Score:</span>	<!--table>
-			<tr><td><img src="1skin\skin1.png"></td><td><img src="2mucus\mucus1.png"></td><td><img src="3mast\mast1.png"></td><td><img src="4neutrophil\neutrophil1.png"></td></tr>
-			<tr><td><img src="5macrophage\macrophage1.png"></td><td><img src="6NaturalKiller\NaturalKiller1.png"></td><td><img src="bCell\bCell1.png"></td><td><img src="8HelperTCell\HelperTCell1.png"></td></tr>
-			<tr><td><img src="11KillerTCell\KillerTCell1.png"></td><td><img src="10MemoryCell\MemoryCell1.png"></td><td><img src="11Immunity\Immunity1.png"></td><td>12</td></tr>
-			<tr><td>13</td><td>14</td><td>15</td><td>16</td></tr>
-		</table/!-->
-			<table id = "board">
-			<tr>
-				<td><span id="c1r1" class="cont"></span></td>
-				<td><span id="c2r1" class="cont"></span></td>
-				<td><span id="c3r1" class="cont"></span></td>
-				<td><span id="c4r1" class="cont"></span></td>
-			</tr><tr>
-				<td><span id="c1r2" class="cont"></span></td>
-				<td><span id="c2r2" class="cont"></span></td>
-				<td><span id="c3r2" class="cont"></span></td>
-				<td><span id="c4r2" class="cont"></span></td>
-			</tr><tr>
-				<td><span id="c1r3" class="cont"></span></td>
-				<td><span id="c2r3" class="cont"></span></td>
-				<td><span id="c3r3" class="cont"></span></td>
-				<td><span id="c4r3" class="cont"></span></td>
-			</tr><tr>
-				<td><span id="c1r4" class="cont"></span></td>
-				<td><span id="c2r4" class="cont"></span></td>
-				<td><span id="c3r4" class="cont"></span></td>
-				<td><span id="c4r4" class="cont"></span></td>
-			</tr>
-		</table>
-		<p class="inst">Use arrow keys to combine similar tiles. Try to reach the 2048 Immunity tile</p>
-	</span>
+</head>
+<body  id="PlayArea" onload="myFunction()" onclick = "myClick(event)" >
+	<h2><center>Online Molecule Kit</center></h2>
+	<button value="Help" id="Help" onclick="Help()">Help</button>
+	<!--div id="console">
+		<div id="notes">Notes:</div>
+		<div id="data"></div>
+	</div/!-->
+
+	<div id="Molecule"></div>	</div>
+	<div class="footer">
+		<span class="buttons">
+			<div id="buttonAtom" style = "padding-bottom: 15px">
+				<button value="Hydrogen" id = "Hydrogen" onclick="CreateAtom('Hydrogen', 'H')">H</button>
+				<button value="Helium" id = "Helium" onclick="CreateAtom('Helium','He')">He</button>
+				<button value="Lithium" id = "Lithium" onclick="CreateAtom('Lithium','Li')">Li</button>
+				<button value="Beryllium" id = "Beryllium", onclick="CreateAtom('Beryllium','Be')">Be</button>
+				<button value="Boron" id = "Boron", onclick="CreateAtom('Boron','B')">B</button>
+				<button value="Carbon" id="Carbon" onclick="CreateAtom('Carbon','C')">C</button>
+				<button value="Nitrogen" id="Nitrogen" onclick="CreateAtom('Nitrogen','N')">N</button>
+				<button value="Oxygen" id="Oxygen" onclick="CreateAtom('Oxygen', 'O')">O</button>
+				<button value="Fluorine" id="Fluorine" onclick="CreateAtom('Fluorine','F')">F</button>
+				<button value="Sodium" id="Sodium" onclick="CreateAtom('Sodium','Na')">Na</button>
+				<button value="Magnesium" id="Magnesium" onclick="CreateAtom('Magnesium','Mg')">Mg</button>
+				<button value="Aluminum" id="Aluminum" onclick="CreateAtom('Aluminum','Al')">Al</button>
+				<button value="Silicon" id="Silicon" onclick="CreateAtom('Silicon','Si')">Si</button>
+				<button value="Phosphorus" id="Phosphorus" onclick="CreateAtom('Phosphorus','P')">P</button>
+				<button value="Sulphur" id="Sulphur" onclick="CreateAtom('Sulphur','S')">S</button>
+				<button value="Chlorine" id="Chlorine" onclick="CreateAtom('Chlorine','Cl')">Cl</button>
+				<button value="Potassium" id="Potassium" onclick="CreateAtom('Potassium','K')">K</button>
+				<button value="Calcium" id="Calcium" onclick="CreateAtom('Calcium','Ca')">Ca</button>
+				<button value="Bromine" id="Bromine" onclick="CreateAtom('Bromine','Br')">Br</button>
+				<button value="Copper" id="Copper" onclick="CreateAtom('Copper','Cu')">Cu</button>
+				<button value="Silver" id="Silver" onclick="CreateAtom('Silver','Ag')">Ag</button>
+				<button value="Gold" id="Gold" onclick="CreateAtom('Gold','Au')">Au</button>
+				<button value="Iodine" id="Iodine" onclick="CreateAtom('Iodine','I')">I</button>
+				<button value="Mercury" id="Mercury" onclick="CreateAtom('Mercury','Hg')">Hg</button>
+				<button value="Lead" id="Lead" onclick="CreateAtom('Lead','Pb')">Pb</button>
+				<button value="Bismuth" id="Bismuth" onclick="CreateAtom('Bismuth','Bi')">Bi</button>
+			</div><div id="buttonFunctions">
+				<button value="ElectronPair" id="ElectronPair" onclick="createPair()" disabled>Electrons</button>
+				<button value="DeleteEl" id="DeleteEl" onclick="deleteEl()">Delete</button>
+				<button value="Change" id="Change" onclick="differentAtom(event)" disabled>Change Atom</button>
+				<button value="Clear" id="Clear" onclick="clearMolecule()">Clear/Restart</button>
+			</div></span>
+			<span class="legal">Copyright 2022, Carolyn Righeimer</span>
+	</div>
+	
 </body>
-<script src="immunity.js"></script>
+<script src = "globals.js"></script>
+<script src = "LewisJava.js"></script>
+<script src = "Atoms.js"></script>
+<script src = "general.js"></script>
 </html>
